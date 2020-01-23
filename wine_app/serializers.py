@@ -5,5 +5,5 @@ class BottleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bottle
         fields = [
-            'id', 'Winery', 'Grape', 'Year', 'Description', 'updated_at'
+            'id', 'author', 'winery', 'grape', 'year', 'description', 'updated_at'
         ]

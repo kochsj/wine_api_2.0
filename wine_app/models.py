@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime
 
+set
+
 def year_choices(current):
     return [(year, year) for year in range(current, 1920, -1)]
 
@@ -30,15 +32,15 @@ class Bottle(models.Model):
         (SHI, 'Shiraz/Syrah'),
         (ZIN, 'Zinfandel'),
     ]
-    User = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    Winery = models.CharField(max_length=128)
-    Grape = models.CharField(choices=GRAPE_CHOICES, default=CAB, max_length=20)
-    Year = models.IntegerField(choices=YEAR_CHOICES, default=current_year)
-    Description = models.TextField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    winery = models.CharField(max_length=128)
+    grape = models.CharField(choices=GRAPE_CHOICES, default=CAB, max_length=20)
+    year = models.IntegerField(choices=YEAR_CHOICES, default=current_year)
+    description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.Winery
+        return self.winery
 
         
