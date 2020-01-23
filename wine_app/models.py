@@ -2,8 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 import datetime
 
-set
-
 def year_choices(current):
     return [(year, year) for year in range(current, 1920, -1)]
 
